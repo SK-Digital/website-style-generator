@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Showcase Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8">
+  <main class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-black mb-8">Style Showcase Generator</h1>
+    <form>
+      <div class="mb-6">
+        <label class="block mb-2 font-bold">Choose a background style:</label>
+        <select name="background-style" class="w-full p-2 border-2 border-black">
+          <option value="detailed">Detailed/CSS Animated Background</option>
+          <option value="gradient">Gradient Background</option>
+          <option value="plain">Plain Background</option>
+        </select>
+      </div>
+      <div class="mb-6">
+        <label class="block mb-2 font-bold">
+          <input name="prompt" placeholder="Enter a style theme (e.g., 'retro', 'futuristic', 'minimalist')" type="text" class="w-full p-2 border-2 border-black">
+        </label>
+      </div>
+      <button type="submit" class="bg-black text-white px-6 py-2 font-bold border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all">Generate Showcase</button>
+    </form>
+    <div id="showcase-output" class="mt-8">
+      <div class="mb-4">
+        <div class="flex mb-2">
+          <button id="preview-tab" class="px-4 py-2 font-bold border-2 border-black bg-blue-500 text-white">Preview</button>
+          <button id="code-tab" class="px-4 py-2 font-bold border-2 border-l-0 border-black bg-gray-200">Code</button>
+        </div>
+        <div id="preview-content">
+          <h2 class="text-2xl font-bold mb-2">Generated Showcase:</h2>
+          <iframe id="showcase-preview" class="border-2 border-black w-full" style="height: 500px;"></iframe>
+        </div>
+        <div id="code-content" class="hidden">
+          <h3 class="text-xl font-bold mb-2">Generated Code:</h3>
+          <pre class="bg-gray-100 p-4 overflow-x-auto"><code id="generated-code"></code></pre>
+        </div>
+        <button id="copy-code" class="bg-blue-500 text-white px-4 py-2 font-bold border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all">
+          Copy Code
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

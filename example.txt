@@ -1,0 +1,97 @@
+<template>
+  <section class="bg-black p-8 shadow-md relative overflow-hidden">
+    <div class="stars absolute inset-0"></div>
+    <div class="halo-ring absolute inset-0 flex items-center justify-center">
+      <div class="ring"></div>
+    </div>
+    <nav class="mb-6 relative z-10">
+      <ul class="flex space-x-4 font-halo text-lg">
+        <li v-for="item in ['Earth', 'Reach', 'Installation 04']" :key="item">
+          <a href="#" class="text-blue-300 hover:text-white transition-colors duration-300 relative group">
+            {{ item }}
+            <span class="absolute inset-x-0 bottom-0 h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 opacity-0 group-hover:opacity-100"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="space-y-6 relative z-10">
+      <h2 class="text-3xl font-halo font-bold mb-4 text-white">Halo Style Showcase</h2>
+      
+      <div class="flex space-x-4">
+        <button class="bg-blue-900 text-white px-6 py-2 font-halo border border-blue-700 shadow-lg hover:bg-blue-800 transition-colors duration-300">
+          Deploy
+        </button>
+        
+        <button class="bg-blue-800 text-white px-6 py-2 font-halo border border-blue-700 shadow-lg hover:bg-blue-700 transition-colors duration-300">
+          Engage
+        </button>
+      </div>
+      
+      <div class="bg-blue-900 bg-opacity-50 p-4 border border-blue-700 shadow-lg">
+        <p class="font-halo text-blue-300">Wake me... when you need me.</p>
+      </div>
+      
+      <div class="flex items-center space-x-2">
+        <input type="text" placeholder="Enter your Spartan name" class="border border-blue-700 bg-blue-900 bg-opacity-50 p-2 w-64 font-halo text-blue-300 placeholder-blue-400">
+        <button class="bg-blue-800 text-white px-4 py-2 font-halo border border-blue-700 shadow-lg hover:bg-blue-700 transition-colors duration-300">
+          Join UNSC
+        </button>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+@font-face {
+  font-family: 'Halo';
+  src: url('/fonts/halo.woff2') format('woff2');
+}
+
+.font-halo {
+  font-family: 'Halo', sans-serif;
+}
+
+.stars {
+  background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.halo-ring {
+  pointer-events: none;
+}
+
+.ring {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 30px solid #708090; /* Steel color */
+  box-shadow: 0 0 50px #4169E1, inset 0 0 50px #4169E1; /* Blue glow */
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 50px #4169E1, inset 0 0 50px #4169E1;
+  }
+  50% {
+    box-shadow: 0 0 100px #4169E1, inset 0 0 100px #4169E1;
+  }
+  100% {
+    box-shadow: 0 0 50px #4169E1, inset 0 0 50px #4169E1;
+  }
+}
+</style>
